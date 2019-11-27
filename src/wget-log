@@ -1,0 +1,11 @@
+--2019-11-27 13:19:01--  https://colorlibvault-divilabltd.netdna-ssl.com/persuit.zip?bcsi_scan_133e4841e5fe3e22=0
+Resolving colorlibvault-divilabltd.netdna-ssl.com (colorlibvault-divilabltd.netdna-ssl.com)... 151.139.239.36
+Connecting to colorlibvault-divilabltd.netdna-ssl.com (colorlibvault-divilabltd.netdna-ssl.com)|151.139.239.36|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 17558185 (17M) [application/zip]
+Saving to: ‘persuit.zip’
+
+persuit.zip              0%[                             ]       0  --.-KB/s               persuit.zip             55%[===============>             ]   9.25M  46.2MB/s               persuit.zip            100%[============================>]  16.74M  50.8MB/s    in 0.3s    
+
+2019-11-27 13:19:02 (50.8 MB/s) - ‘persuit.zip’ saved [17558185/17558185]
+
