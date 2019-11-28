@@ -31,7 +31,7 @@
             "styles": [
               "src/styles.sass"
             ],
-            "scripts": []
+            "scripts": ["src/assets/js/jquery-3.2.1.min.js"]
           },
           "configurations": {
             "production": {

@@ -1,16 +1,16 @@
 ;(function($) {
     "use strict";
-    
-//    var nav_offset_top = $('header').height(); 
+
+//    var nav_offset_top = $('header').height();
 //    /*-------------------------------------------------------------------------------
-//	  Navbar 
+//	  Navbar
 //	-------------------------------------------------------------------------------*/
 //
-//	//* Navbar Fixed  
+//	//* Navbar Fixed
 //    function navbarFixed(){
-//        if ( $('.main_menu_area, .search_area').length ){ 
+//        if ( $('.main_menu_area, .search_area').length ){
 //            $(window).scroll(function() {
-//                var scroll = $(window).scrollTop();   
+//                var scroll = $(window).scrollTop();
 //                if (scroll >= nav_offset_top ) {
 //                    $(".main_menu_area, .search_area").addClass("navbar_fixed");
 //                } else {
@@ -20,9 +20,9 @@
 //        };
 //    };
 //    navbarFixed();
-    
-    
-    
+
+
+
     /*----------------------------------------------------*/
     /*  Main Slider js
     /*----------------------------------------------------*/
@@ -73,7 +73,7 @@
         }
     }
     main_slider();
-    
+
     /*----------------------------------------------------*/
     /*  Main Slider js
     /*----------------------------------------------------*/
@@ -160,7 +160,7 @@
         }
     }
     product_slider();
-    
+
     /*----------------------------------------------------*/
     /*  Main Slider js
     /*----------------------------------------------------*/
@@ -213,7 +213,7 @@
                         width:78,
                         height:104,
                         min_width:100,
-                        wrapper_padding:0, 
+                        wrapper_padding:0,
                         wrapper_color:"#fff",
                         wrapper_opacity:"1",
                         tmp:'<span class="tp-thumb-img-wrap">  <span class="tp-thumb-image"></span></span>',
@@ -281,7 +281,7 @@
         }
     }
     product_slider2();
-    
+
     /*----------------------------------------------------*/
     /*  Main Slider js
     /*----------------------------------------------------*/
@@ -351,7 +351,7 @@
                         style:"normal",
                         enable:true,
                         hide_onmobile:true,
-                        
+
                         left: {
                             h_align: "right",
                             v_align: "bottom",
@@ -379,8 +379,8 @@
         }
     }
     home_box_slider();
-  
-    
+
+
     /*----------------------------------------------------*/
     /*  Explor Room Slider
     /*----------------------------------------------------*/
@@ -466,7 +466,7 @@
         }
     }
     sunglass_slider();
-    
+
     /*----------------------------------------------------*/
     /*  Explor Room Slider
     /*----------------------------------------------------*/
@@ -479,7 +479,7 @@
                 nav:true,
                 autoplay: false,
                 smartSpeed: 1500,
-                dots:true, 
+                dots:true,
                 navContainer: '.f_product_left',
                 navText: ['<i class="arrow_carrot-left" aria-hidden="true"></i>','<i class="arrow_carrot-right" aria-hidden="true"></i>'],
                 responsiveClass: true,
@@ -498,7 +498,7 @@
         }
     }
     fillter_slider();
-    
+
     /*----------------------------------------------------*/
     /*  Explor Room Slider
     /*----------------------------------------------------*/
@@ -511,7 +511,7 @@
                 nav:true,
                 autoplay: false,
                 smartSpeed: 1500,
-                dots:true, 
+                dots:true,
                 navContainerClass: 'fillter_product_slider',
                 navText: ['<i class="arrow_carrot-left" aria-hidden="true"></i>','<i class="arrow_carrot-right" aria-hidden="true"></i>'],
                 responsiveClass: true,
@@ -533,7 +533,7 @@
         }
     }
     fillter_p_slider();
-    
+
     /*----------------------------------------------------*/
     /*  Explor Room Slider
     /*----------------------------------------------------*/
@@ -546,7 +546,7 @@
                 nav:true,
                 autoplay: false,
                 smartSpeed: 1500,
-                dots:true, 
+                dots:true,
                 navContainer: '.home_carousel_slider',
                 navText: ['<i class="arrow_carrot-left" aria-hidden="true"></i>','<i class="arrow_carrot-right" aria-hidden="true"></i>'],
                 responsive: {
@@ -567,9 +567,9 @@
         }
     }
     carousel_slider();
-    
-   
-    
+
+
+
     /*----------------------------------------------------*/
     /*  portfolio_isotope
     /*----------------------------------------------------*/
@@ -583,14 +583,14 @@
                     columnWidth: 1
         //            masonry: {
         //                columnWidth: '.grid-sizer, .grid-sizer_two',
-        //            }            
-                }); 
-            }); 
+        //            }
+                });
+            });
         }
     }
     main_gallery();
-    
-    
+
+
     /*----------------------------------------------------*/
     /*  Isotope Fillter js
     /*----------------------------------------------------*/
@@ -614,16 +614,16 @@
             });
         }
     }
-    
+
     portfolio_isotope();
-    
-    
+
+
     /*----------------------------------------------------*/
-    /*  Language Flag js 
+    /*  Language Flag js
     /*----------------------------------------------------*/
     function createByJson() {
-        var jsonData = [					
-            {description:'Choos your payment gateway', value:'', text:'Payment Gateway'},					
+        var jsonData = [
+            {description:'Choos your payment gateway', value:'', text:'Payment Gateway'},
             {image:'../img/icon/flag-1.png', description:'My life. My card...', value:'amex', text:'Amex'},
             {image:'../img/icon/flag-1.png', description:'It pays to Discover...', value:'Discover', text:'Discover'},
             {image:'../img/icon/flag-1.png', title:'For everything else...', description:'For everything else...', value:'Mastercard', text:'Mastercard'},
@@ -633,7 +633,7 @@
         ];
         $("#byjson").msDropDown({byJson:{data:jsonData, name:'payments2'}}).data("dd");
     }
-    $(document).ready(function(e) {		
+    $(document).ready(function(e) {
     //no use
     try {
         var pages = $("#pages").msDropdown({on:{change:function(data, ui) {
@@ -647,7 +647,7 @@
         pages.setIndexByValue(pagename[pagename.length-1]);
         $("#ver").html(msBeautify.version.msDropdown);
     } catch(e) {
-    //console.log(e);	
+    //console.log(e);
     }
     $("#ver").html(msBeautify.version.msDropdown);
 
@@ -662,8 +662,8 @@
     $("#tech").change(function() {
         console.log("by jquery: ", this.value);
     })
-    
-    
+
+
     $(document).ready(function() {
         $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
             disableOn: 700,
@@ -675,14 +675,14 @@
             fixedContentPos: false
         });
     });
-    
+
 
    $(".verticalCarousel").verticalCarousel({
         currentItem: 1,
         showItems: 4,
     });
-    
-    
+
+
     $( "#slider-range" ).slider({
       range: true,
       min: 0,
@@ -694,8 +694,8 @@
     });
     $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
       " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-    
-    
-    
+
+
+
 })(jQuery)
 

@@ -47,150 +47,23 @@
               </div>
               <div class="two_column_product">
                   <div class="row">
-                      <div class="col-lg-4 col-sm-6">
+                      <div class="col-lg-4 col-sm-6" *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
                           <div class="l_product_item">
+                              <a href="/products/details/{{i}}">
                               <div class="l_p_img">
-                                  <img class="img-fluid" src="img/product/three-column/product-three-1.jpg" alt="">
+                                  <img class="img-fluid" src="assets/img/product/three-column/product-three-1.jpg" alt="">
                                   <h5 class="sale">Sale</h5>
+                                  <h5 class="new">New</h5>
                               </div>
+                              </a>
                               <div class="l_p_text">
                                  <ul>
-                                      <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
+                                      <li class="p_icon"><a href="/products/details/{{i}}"><i class="icon_piechart"></i></a></li>
                                       <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
                                       <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
                                   </ul>
                                   <h4>Travel Bags</h4>
                                   <h5><del>$45.50</del>  $40</h5>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-6">
-                          <div class="l_product_item">
-                              <div class="l_p_img">
-                                  <img class="img-fluid" src="img/product/three-column/product-three-2.jpg" alt="">
-                                  <h5 class="new">New</h5>
-                              </div>
-                              <div class="l_p_text">
-                                 <ul>
-                                      <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
-                                      <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
-                                      <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
-                                  </ul>
-                                  <h4>Nike Shoes</h4>
-                                  <h5><del>$130</del>  $110</h5>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-6">
-                          <div class="l_product_item">
-                              <div class="l_p_img">
-                                  <img class="img-fluid" src="img/product/three-column/product-three-3.jpg" alt="">
-                              </div>
-                              <div class="l_p_text">
-                                 <ul>
-                                      <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
-                                      <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
-                                      <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
-                                  </ul>
-                                  <h4>Women's Ponte Longsleeve</h4>
-                                  <h5>$95.00</h5>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-6">
-                          <div class="l_product_item">
-                              <div class="l_p_img">
-                                  <img class="img-fluid" src="img/product/three-column/product-three-4.jpg" alt="">
-                              </div>
-                              <div class="l_p_text">
-                                 <ul>
-                                      <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
-                                      <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
-                                      <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
-                                  </ul>
-                                  <h4>Google Sunglass</h4>
-                                  <h5><del>$1500 </del>  $1150</h5>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-6">
-                          <div class="l_product_item">
-                              <div class="l_p_img">
-                                  <img class="img-fluid" src="img/product/three-column/product-three-5.jpg" alt="">
-                                  <h5 class="sale">Sale</h5>
-                              </div>
-                              <div class="l_p_text">
-                                 <ul>
-                                      <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
-                                      <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
-                                      <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
-                                  </ul>
-                                  <h4>Women's Ponte Longsleeve</h4>
-                                  <h5>$95.00</h5>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-6">
-                          <div class="l_product_item">
-                              <div class="l_p_img">
-                                  <img class="img-fluid" src="img/product/three-column/product-three-6.jpg" alt="">
-                              </div>
-                              <div class="l_p_text">
-                                 <ul>
-                                      <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
-                                      <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
-                                      <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
-                                  </ul>
-                                  <h4>Google Sunglass</h4>
-                                  <h5><del>$1500 </del>  $1150</h5>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-6">
-                          <div class="l_product_item">
-                              <div class="l_p_img">
-                                  <img class="img-fluid" src="img/product/three-column/product-three-7.jpg" alt="">
-                              </div>
-                              <div class="l_p_text">
-                                 <ul>
-                                      <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
-                                      <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
-                                      <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
-                                  </ul>
-                                  <h4>Mens Fashion Clothes</h4>
-                                  <h5>$150</h5>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-6">
-                          <div class="l_product_item">
-                              <div class="l_p_img">
-                                  <img class="img-fluid" src="img/product/three-column/product-three-8.jpg" alt="">
-                              </div>
-                              <div class="l_p_text">
-                                 <ul>
-                                      <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
-                                      <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
-                                      <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
-                                  </ul>
-                                  <h4>Google Sunglass</h4>
-                                  <h5><del>$1500 </del>  $1150</h5>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-6">
-                          <div class="l_product_item">
-                              <div class="l_p_img">
-                                  <img class="img-fluid" src="img/product/three-column/product-three-9.jpg" alt="">
-                              </div>
-                              <div class="l_p_text">
-                                 <ul>
-                                      <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
-                                      <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
-                                      <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
-                                  </ul>
-                                  <h4>Full-Grain Leather Belt</h4>
-                                  <h5>$33.50</h5>
                               </div>
                           </div>
                       </div>

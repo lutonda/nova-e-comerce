@@ -26,10 +26,10 @@ Table of Content:
 06/ feature
 07/ button
 08/ service
-09/ testimonials 
-10/ blog 
-11/ contact 
-12/ footer 
+09/ testimonials
+10/ blog
+11/ contact
+12/ footer
 =====================================================================*/
 /*----------------------------------------------------*/
 /*font Variables*/
@@ -1565,7 +1565,7 @@ i:before {
 /* Categories Banner Area css
 ============================================================================================ */
 .categories_banner_area {
-  background: url(../img/banner/categories-banner.jpg) no-repeat scroll center center;
+  background: url(assets/img/banner/categories-banner.jpg) no-repeat scroll center center;
   background-size: cover;
   position: relative;
   z-index: 3;
@@ -1584,7 +1584,7 @@ i:before {
 
 .c_banner_inner {
   text-align: center;
-  padding: 170px 0px;
+  padding: 100px 0px;
 }
 
 .c_banner_inner h3 {
