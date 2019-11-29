@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { ProductService } from '../services/product.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -38,13 +38,12 @@ export class HomeComponent implements OnInit {
           }
         },
   }
-  items: any[]=[1,2,3,4];
+  items: any[]=[];
 
   constructor(private spinner: NgxSpinnerService, private itemService: ProductService) {}
 
 
   async ngOnInit() {
-    this.items=[];
 
     await this.itemService.get().then((data)=>{
       this.items=<any>data;

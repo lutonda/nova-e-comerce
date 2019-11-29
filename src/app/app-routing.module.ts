@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { AuthGuardService } from './services/auth/auth-guard.service';
+import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { ProductsComponent } from './products/products.component';
-import { DetailsComponent } from './product/details/details.component';
-import { LoginComponent } from './user/login/login.component';
-import { RegisterComponent } from './user/register/register.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { DetailsComponent } from './pages/user/details/details.component';
+import { LoginComponent } from './pages/user/login/login.component';
+import { RegisterComponent } from './pages/user/register/register.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 
 const routes: Routes = [
@@ -17,6 +19,14 @@ const routes: Routes = [
 
   { path: 'auth/login', component: LoginComponent },
   { path: 'auth/register', component: RegisterComponent },
+  {
+    path: 'profile',
+    component: UserProfileComponent,
+    canActivate: [AuthGuardService],
+    data: {
+   //   expectedRole: 'admin'
+    }
+  }
 ];
 
 @NgModule({

@@ -4,16 +4,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule  }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
+import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { ProductsComponent } from './products/products.component';
-import { ProductComponent } from './product/product.component';
-import { DetailsComponent } from './product/details/details.component';
-import { LoginComponent } from './user/login/login.component';
-import { RegisterComponent } from './user/register/register.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { ProductComponent } from './pages/product/product.component';
+import { DetailsComponent } from './pages/user/details/details.component';
+import { LoginComponent } from './pages/user/login/login.component';
+import { RegisterComponent } from './pages/user/register/register.component';
+
+const JWT_Module_Options: JwtModuleOptions = {
+    config: {
+        //tokenGetter: '123123',
+        //whitelistedDomains: 'localhost'
+    }
+};
 
 @NgModule({
   declarations: [
@@ -24,7 +34,8 @@ import { RegisterComponent } from './user/register/register.component';
     ProductComponent,
     DetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +43,10 @@ import { RegisterComponent } from './user/register/register.component';
     BrowserAnimationsModule,
     CarouselModule,
     NgxSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    JwtModule.forRoot(JWT_Module_Options)
   ],
   providers: [],
   bootstrap: [AppComponent],

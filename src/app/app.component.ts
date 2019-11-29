@@ -1,6 +1,5 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
-import { ProductComponent } from './product/product.component';
 import { ProductService } from './services/product.service';
 
 @Component({
