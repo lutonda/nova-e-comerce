@@ -8,19 +8,15 @@ import {NgForm, FormGroup, FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
-  userForm:FormGroup;
+
   constructor(private formBuilder: FormBuilder) { }
 
-  ngOnInit() {
-  this.userForm = this.formBuilder.group({
-            username: ['', Validators.required],
-            password: ['', Validators.required]
-        });
-  }
-  model:any={nome:'Username',password:'Password'};
+  ngOnInit() {}
 
   submitted = false;
-  get f() { return this.userForm.controls; }
 
-  onSubmit(m) { this.submitted = true; alert(JSON.stringify(m)) }
+  onSubmit(m) {
+
+    this.submitted = true; alert(JSON.stringify(m.value) + m.valid)
+  }
 }
