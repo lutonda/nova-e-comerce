@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,6 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
 
   customOptions: OwlOptions = {
     loop:true,
@@ -37,8 +38,19 @@ export class HomeComponent implements OnInit {
           }
         },
   }
+  items: any[]=[1,2,3,4];
 
-  ngOnInit() {
+  constructor(private spinner: NgxSpinnerService, private itemService: ProductService) {}
+
+
+  async ngOnInit() {
+    this.items=[];
+
+    await this.itemService.get().then((data)=>{
+      this.items=data;
+    }).catch((error)=>{
+      console.log("Promise rejected with " + JSON.stringify(error));
+    });
   }
 
 }

@@ -3,97 +3,18 @@
         <section class="home_carousel_area">
           <div class="home_carousel_slider">
               <owl-carousel-o [options]="customOptions">
-              <ng-template carouselSlide>
+              <ng-template carouselSlide *ngFor='let item of items'>
                   <div class="h_carousel_item">
                       <img src="assets/img/home-carousel/home-c-1.jpg" alt="">
                       <div class="carousel_hover">
-                          <h3>mens bag</h3>
-                          <h4>We feature the best professional bags </h4>
+                          <h3>{{item.tipo.nome}}</h3>
+                          <h4>{{item.nome}}</h4>
                           <h5>Including:</h5>
-                          <p>Adidas, Century, Everlast, Fairtex, Fighting Sports, WaveMaster, Twins, Rival</p>
-                          <a class="discover_btn" href="products/details/7">discover now</a>
+                          <p>{{item.descricao}}</p>
+                          <a class="discover_btn" [routerLink]="['/products/details/',item.id]">Ver mais</a>
                       </div>
                   </div>
               </ng-template>
-
-              <ng-template carouselSlide>
-                  <div class="h_carousel_item">
-                      <img src="assets/img/home-carousel/home-c-2.jpg" alt="">
-                      <div class="carousel_hover">
-                          <h3>mens bag</h3>
-                          <h4>We feature the best professional bags </h4>
-                          <h5>Including:</h5>
-                          <p>Adidas, Century, Everlast, Fairtex, Fighting Sports, WaveMaster, Twins, Rival</p>
-                          <a class="discover_btn" href="products/details/7">discover now</a>
-                      </div>
-                  </div>
-              </ng-template>
-
-              <ng-template carouselSlide>
-                  <div class="h_carousel_item">
-                      <img src="assets/img/home-carousel/home-c-3.jpg" alt="">
-                      <div class="carousel_hover">
-                          <h3>mens bag</h3>
-                          <h4>We feature the best professional bags </h4>
-                          <h5>Including:</h5>
-                          <p>Adidas, Century, Everlast, Fairtex, Fighting Sports, WaveMaster, Twins, Rival</p>
-                          <a class="discover_btn" href="products/details/7">discover now</a>
-                      </div>
-                  </div>
-              </ng-template>
-
-              <ng-template carouselSlide>
-                  <div class="h_carousel_item">
-                      <img src="assets/img/home-carousel/home-c-4.jpg" alt="">
-                      <div class="carousel_hover">
-                          <h3>mens bag</h3>
-                          <h4>We feature the best professional bags </h4>
-                          <h5>Including:</h5>
-                          <p>Adidas, Century, Everlast, Fairtex, Fighting Sports, WaveMaster, Twins, Rival</p>
-                          <a class="discover_btn" href="products/details/7">discover now</a>
-                      </div>
-                  </div>
-              </ng-template>
-
-              <ng-template carouselSlide>
-                  <div class="h_carousel_item">
-                      <img src="assets/img/home-carousel/home-c-5.jpg" alt="">
-                      <div class="carousel_hover">
-                          <h3>mens bag</h3>
-                          <h4>We feature the best professional bags </h4>
-                          <h5>Including:</h5>
-                          <p>Adidas, Century, Everlast, Fairtex, Fighting Sports, WaveMaster, Twins, Rival</p>
-                          <a class="discover_btn" href="products/details/7">discover now</a>
-                      </div>
-                  </div>
-              </ng-template>
-
-              <ng-template carouselSlide>
-                  <div class="h_carousel_item">
-                      <img src="assets/img/home-carousel/home-c-4.jpg" alt="">
-                      <div class="carousel_hover">
-                          <h3>mens bag</h3>
-                          <h4>We feature the best professional bags </h4>
-                          <h5>Including:</h5>
-                          <p>Adidas, Century, Everlast, Fairtex, Fighting Sports, WaveMaster, Twins, Rival</p>
-                          <a class="discover_btn" href="products/details/7">discover now</a>
-                      </div>
-                  </div>
-              </ng-template>
-
-              <ng-template carouselSlide>
-                  <div class="h_carousel_item">
-                      <img src="assets/img/home-carousel/home-c-5.jpg" alt="">
-                      <div class="carousel_hover">
-                          <h3>mens bag</h3>
-                          <h4>We feature the best professional bags </h4>
-                          <h5>Including:</h5>
-                          <p>Adidas, Century, Everlast, Fairtex, Fighting Sports, WaveMaster, Twins, Rival</p>
-                          <a class="discover_btn" href="products/details/7">discover now</a>
-                      </div>
-                  </div>
-              </ng-template>
-
               </owl-carousel-o>
           </div>
       </section>
@@ -107,7 +28,7 @@
                       <div class="special_offer_item">
                           <img class="img-fluid" src="assets/img/feature-add/special-offer-1.jpg" alt="">
                           <div class="hover_text">
-                              <h4>Special Offer</h4>
+                              <h4>Special Offer -{{items.length}}-</h4>
                               <h5>Young Couple</h5>
                               <a class="shop_now_btn" href="#">Shop Now</a>
                           </div>
@@ -142,14 +63,17 @@
                       <li data-filter=".bags"><a href="#">Bags</a></li>
                   </ul>
                   <div class="row isotope_l_p_inner">
-                      <div class="col-lg-3 col-md-4 col-sm-6 woman bags" *ngFor="let i of [1,2,3,4]">
+                      <div class="col-lg-3 col-md-4 col-sm-6 woman bags" *ngFor="let item of items">
                           <div class="l_product_item">
-                              <div class="l_p_img">
-                                  <img class="img-fluid" src="assets/img/product/l-product-1.jpg" alt="">
-                              </div>
+
+                              <a [routerLink]="['/products/details/',item.id]">
+                                <div class="l_p_img">
+                                    <img class="img-fluid" src="assets/img/product/l-product-1.jpg" alt="">
+                                </div>
+                              </a>
                               <div class="l_p_text">
                                   <ul>
-                                      <li class="p_icon"><a href="/products/details/9879871987"><i class="icon_piechart"></i></a></li>
+                                      <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
                                       <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
                                       <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
                                   </ul>
