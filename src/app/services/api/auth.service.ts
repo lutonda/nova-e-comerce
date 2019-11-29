@@ -7,7 +7,16 @@ import { HttpClient } from 'selenium-webdriver/http';
   providedIn: 'root'
 })
 export class AuthService extends RestService implements SInterface{
-    getOne(id:string){this._getOne(id).then(auth=>{
+  getAll(): any[] {
+    throw new Error("Method not implemented.");
+  }
+  getby(object: any) {
+    throw new Error("Method not implemented.");
+  }
+  postOne(object: any): boolean {
+    throw new Error("Method not implemented.");
+  }
+  getOne(id:string){this._getOne(id).then(auth=>{
 
-    })}
+  })}
 }
