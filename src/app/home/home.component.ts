@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
     this.items=[];
 
     await this.itemService.get().then((data)=>{
-      this.items=data;
+      this.items=<any>data;
     }).catch((error)=>{
       console.log("Promise rejected with " + JSON.stringify(error));
     });

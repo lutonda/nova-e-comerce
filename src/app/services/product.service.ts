@@ -22,6 +22,12 @@ export class ProductService {
 
 
   public async get(){
-    return this.http.get('http://192.168.100.4:8000/Api/V3/item/all', httpOptions).toPromise()
+    return this.http.get('https://demo.nova-erp.com/Api/V3/item/all', httpOptions).toPromise()
+    //return this.http.get('http://192.168.100.4:8000/Api/V3/item/all', httpOptions).toPromise()
+  }
+
+  public async getOne(id: string){
+    return this.http.get('https://demo.nova-erp.com/Api/V3/item/'+id, httpOptions).toPromise()
+    //return this.http.get('http://192.168.100.4:8000/Api/V3/item/all', httpOptions).toPromise()
   }
 }

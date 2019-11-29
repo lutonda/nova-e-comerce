@@ -3,11 +3,11 @@
         <section class="categories_banner_area">
           <div class="container">
               <div class="c_banner_inner">
-                  <h3>simple product Layout 03</h3>
+                  <h3>simple product Layout 03{{item.codigoBarras}}</h3>
                   <ul>
                       <li><a href="#">Home</a></li>
                       <li><a href="#">Shop</a></li>
-                      <li class="current"><a href="product-details2.html">Simple Product 03</a></li>
+                      <li class="current"><a href="product-details2.html">{{item.nome}}</a></li>
                   </ul>
               </div>
           </div>
@@ -50,7 +50,7 @@
                   </div>
                   <div class="col-lg-7">
                       <div class="product_details_text">
-                          <h3>Nike Flex Run Tracksuit</h3>
+                          <h3>{{item.nome}}</h3>
                           <ul class="p_rating">
                               <li><a href="#"><i class="fa fa-star"></i></a></li>
                               <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -63,8 +63,8 @@
                               <a href="#">Add your review</a>
                           </div>
                           <h6>Available In <span>Stock</span></h6>
-                          <h4>$45.05</h4>
-                          <p>Curabitur semper varius lectus sed consequat. Nam accumsan dapibus sem, sed lobortis nisi porta vitae. Ut quam tortor, facilisis nec laoreet consequat, malesuada a massa. Proin pretium tristique leo et imperdiet.</p>
+                          <h4>${{item.precoSemIva}}</h4>
+                          <p>{{item.descricao}}</p>
                           <div class="p_color">
                               <h4 class="p_d_title">color <span>*</span></h4>
                               <ul class="color_list">

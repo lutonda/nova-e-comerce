@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:4200",
+            "url": "https://4200-a989028f-8830-4aad-9754-0e46911c9347.ws-eu01.gitpod.io",
             "webRoot": "${workspaceFolder}"
         }
     ]
