@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './services/auth/auth-guard.service';
 import { HomeComponent } from './pages/home/home.component';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './pages/contact/contact.component';
 import { ProductsComponent } from './pages/products/products.component';
-import { DetailsComponent } from './pages/user/details/details.component';
 import { LoginComponent } from './pages/user/login/login.component';
 import { RegisterComponent } from './pages/user/register/register.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { DetailsComponent } from './pages/product/details/details.component';
 
 
 const routes: Routes = [

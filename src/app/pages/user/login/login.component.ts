@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import {NgForm, FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +11,29 @@ import {NgForm, FormGroup, FormBuilder, Validators} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
-
-  ngOnInit() {}
+  constructor(private formBuilder: FormBuilder, private router: Router,private auth:AuthService) { }
 
   submitted = false;
+  error='';
+  async ngOnInit() {
+    let isAuthenticated=await this.auth.isAuthenticated();
+    if(isAuthenticated) {
+      this.router.navigate(['/profile']);
+    }
+  }
 
-  onSubmit(m) {
+  async onSubmit(m) {
+    this.submitted = true;
+    await this.auth.authentication(m.value).then(async user =>{
+      await this.auth.createAuthSession(user);
 
-    this.submitted = true; alert(JSON.stringify(m.value) + m.valid)
+      window.location.reload()
+    })
+    .catch((error)=> {
+      this.error=error.statusText;
+      //if(error.code==404)
+
+     console.log('Promise rejected with ' + JSON.stringify(error));
+   });
   }
 }

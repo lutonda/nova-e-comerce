@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule  }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,12 +11,13 @@ import { AppComponent } from './app.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
 import { HomeComponent } from './pages/home/home.component';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './pages/contact/contact.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductComponent } from './pages/product/product.component';
-import { DetailsComponent } from './pages/user/details/details.component';
 import { LoginComponent } from './pages/user/login/login.component';
 import { RegisterComponent } from './pages/user/register/register.component';
+import { DetailsComponent } from './pages/product/details/details.component';
+import { TokenInterceptor } from './services/auth/token.interceptor';
 
 const JWT_Module_Options: JwtModuleOptions = {
     config: {
@@ -32,10 +33,10 @@ const JWT_Module_Options: JwtModuleOptions = {
     ContactComponent,
     ProductsComponent,
     ProductComponent,
-    DetailsComponent,
     LoginComponent,
     RegisterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +49,11 @@ const JWT_Module_Options: JwtModuleOptions = {
     ReactiveFormsModule,
     JwtModule.forRoot(JWT_Module_Options)
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent],
 
 

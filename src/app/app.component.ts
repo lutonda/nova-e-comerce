@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
-import { ProductService } from './services/product.service';
+import { AuthService } from './services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,10 @@ import { ProductService } from './services/product.service';
 })
 export class AppComponent implements OnInit {
   title = 'nova-e-comerce';
+  user:any={};
+  constructor(private spinner: NgxSpinnerService, private auth:AuthService, private router: Router) {}
 
-  constructor(private spinner: NgxSpinnerService) {}
-
-  ngOnInit() {
+  async ngOnInit() {
     /** spinner starts on init */
     this.spinner.show();
 
@@ -21,7 +22,15 @@ export class AppComponent implements OnInit {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
     }, 5000);
+    this.user=await this.auth.user();
 
+  }
 
+  async logout(event) {
+    await this.auth.logout();
+    window.location.reload()
+  }
+  handleClick(event: Event) {
+    this.logout(event)
   }
 }

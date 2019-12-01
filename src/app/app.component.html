@@ -123,7 +123,21 @@
                             </ul>
                             <ul class="navbar-nav justify-content-end">
                                 <li class="search_icon"><a href="#"><i class="icon-magnifier icons"></i></a></li>
-                                <li class="user_icon"><a [routerLink]="['/auth/login']"><i class="icon-user icons"></i></a></li>
+                                <li class="user_icon dropdown submenu" *ngIf="user.id">
+                                  <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="icon-user icons"></i></a>
+                                      <ul class="dropdown-menu">
+                                          <li class="nav-item"><a class="nav-link" >Ola ! {{user.name}}</a></li>
+                                          <li class="nav-item"><a class="nav-link" [routerLink]="['/auth/login']">Peril</a></li>
+                                          <li class="nav-item"><a class="nav-link" (click)="logout($event)">Sair</a></li>
+                                      </ul>
+                                </li>
+                                <li class="user_icon dropdown submenu" *ngIf="user.id==null">
+                                  <a [routerLink]="['/auth/login']">
+                                    <i class="icon-user icons"></i></a>
+
+                                </li>
+
                                 <li class="cart_cart"><a href="#"><i class="icon-handbag icons"></i></a></li>
                             </ul>
                         </div>
